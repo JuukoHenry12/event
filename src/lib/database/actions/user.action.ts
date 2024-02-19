@@ -36,7 +36,7 @@ export async function updateUser(clerkId:string,user:UpdateUserParams){
     const updateUser = await User.findOneAndUpdate({clerkId},user,{new:true})
     if(!updateUser) throw new Error('User update failed')
     return JSON.parse(JSON.stringify(updateUser))
-    
+
   }catch(error){
      handleError(error)
   }
